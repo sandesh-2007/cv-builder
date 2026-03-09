@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern CV Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>CV Builder</h1>
+      <button id="themeToggle" class="btn ghost" aria-label="Toggle color theme">🌙 Dark Mode</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel form-panel">
+        <h2>Build Your Resume</h2>
+        <form id="cvForm">
+          <div class="section">
+            <h3>Personal Details</h3>
+            <label>Full Name <input type="text" name="fullName" placeholder="Jane Doe" required /></label>
+            <label>Role / Title <input type="text" name="title" placeholder="Frontend Developer" /></label>
+            <label>Email <input type="email" name="email" placeholder="jane@email.com" /></label>
+            <label>Phone <input type="tel" name="phone" placeholder="+1 555 123 4567" /></label>
+            <label>Location <input type="text" name="location" placeholder="San Francisco, CA" /></label>
+            <label>LinkedIn / Website <input type="text" name="website" placeholder="linkedin.com/in/janedoe" /></label>
+          </div>
+
+          <div class="section">
+            <h3>Professional Summary</h3>
+            <label>
+              <textarea name="summary" rows="4" placeholder="Write a short, impactful summary..."></textarea>
+            </label>
+          </div>
+
+          <div class="section">
+            <h3>Experience</h3>
+            <label>
+              <textarea name="experience" rows="6" placeholder="• Company — Position (2021–Present)\n• Key impact and achievement"></textarea>
+            </label>
+          </div>
+
+          <div class="section">
+            <h3>Education</h3>
+            <label>
+              <textarea name="education" rows="4" placeholder="• Degree, University (Year)\n• Distinction / Relevant Coursework"></textarea>
+            </label>
+          </div>
+
+          <div class="section">
+            <h3>Skills</h3>
+            <label>
+              <textarea name="skills" rows="3" placeholder="JavaScript, HTML, CSS, React, Figma, Communication"></textarea>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn" id="downloadPdf">Download PDF</button>
+            <button type="reset" class="btn ghost" id="resetBtn">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="preview-toolbar">
+          <h2>Live Preview</h2>
+        </div>
+
+        <article id="resumePreview" class="resume" aria-live="polite">
+          <header class="resume-header">
+            <h1 id="previewName">Your Name</h1>
+            <h2 id="previewTitle">Professional Title</h2>
+            <p id="previewContact">email@example.com • +1 555 000 0000 • City, Country</p>
+            <p id="previewWebsite">yourportfolio.com</p>
+          </header>
+
+          <section>
+            <h3>Summary</h3>
+            <p id="previewSummary">A short professional summary will appear here.</p>
+          </section>
+
+          <section>
+            <h3>Experience</h3>
+            <ul id="previewExperience" class="bullets"><li>Your experience highlights will appear here.</li></ul>
+          </section>
+
+          <section>
+            <h3>Education</h3>
+            <ul id="previewEducation" class="bullets"><li>Your education details will appear here.</li></ul>
+          </section>
+
+          <section>
+            <h3>Skills</h3>
+            <p id="previewSkills">Your key skills will appear here.</p>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErCq0WwS6K5zR16vuMJnqd7qV3CyMfCVxYvBy06SnVAk0nnBYnOVrlaR271GGBqBPdZiZsa1+lZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
